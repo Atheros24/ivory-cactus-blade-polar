@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "The Wedding of Rizal & Farah",
+      "hasCanvas": false,
+      "bodyTextLen": 3019,
+      "bodyTextHash": "f54105d911a55196b2059f37a2053b89712aa9b317f0e58f43130e7fcdfe5ee8",
+      "bodyTextPrefix": "THE WEDDING OF Rizal & Farah 15. 10. 2026 Kepada Yth. BAPAK/IBU/",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "The Wedding of Rizal & Farah",
+      "hasCanvas": false,
+      "bodyTextLen": 3017,
+      "bodyTextHash": "cff4e5d61ce0e6370caae7db5dc0944eb52c9a3ded3d46d03f1b8caf712873d6",
+      "bodyTextPrefix": "THE WEDDING OF Rizal & Farah 15. 10. 2026 Kepada Yth. BAPAK/IBU/",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

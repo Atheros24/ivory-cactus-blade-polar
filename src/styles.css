@@ -1,0 +1,247 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --color-wine: #2a0a10;
+  --color-maroon: #6b1525;
+  --color-maroon-mid: #8e2436;
+  --color-rose: #c48b93;
+  --color-cream: #f7efe6;
+  --color-ivory: #fbf7f1;
+  --color-ink: #3a1a1f;
+  --color-muted: #7a555c;
+  --color-line: #d9c6b8;
+  --color-bg: #2a0a10;
+  --color-surface: #f7efe6;
+  --color-fg: #f7efe6;
+  --color-primary: #6b1525;
+  --color-border: #d9c6b8;
+
+  --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-body: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "Great Vibes", cursive;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body,
+  #app {
+    min-height: 100%;
+    background: var(--color-wine);
+    color: var(--color-cream);
+  }
+
+  body {
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    font-family: var(--font-display);
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+/* Cover exit */
+.invite-cover {
+  transform: translateY(0);
+  opacity: 1;
+  transition:
+    transform 1100ms var(--ease-out),
+    opacity 700ms ease;
+}
+.invite-cover.is-away {
+  transform: translateY(-108%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Ken Burns on photos */
+.ken-burns {
+  animation: ken-burns 22s var(--ease-out) infinite alternate;
+  transform-origin: center 30%;
+}
+@keyframes ken-burns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  filter: blur(6px);
+  transition:
+    opacity 700ms var(--ease-out),
+    transform 700ms var(--ease-out),
+    filter 700ms var(--ease-out);
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+/* Petals */
+.petal {
+  position: absolute;
+  top: -12vh;
+  width: 11px;
+  height: 16px;
+  background: color-mix(in oklab, var(--color-maroon-mid) 55%, white);
+  border-radius: 80% 0 70% 30%;
+  opacity: 0.55;
+  pointer-events: none;
+  animation: petal-fall linear infinite;
+}
+.petal:nth-child(odd) {
+  background: color-mix(in oklab, var(--color-rose) 70%, white);
+  border-radius: 0 80% 30% 70%;
+}
+@keyframes petal-fall {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate3d(var(--drift, 28px), 118vh, 0) rotate(320deg);
+    opacity: 0.15;
+  }
+}
+
+/* Vinyl spin */
+.vinyl-spin {
+  animation: vinyl 8s linear infinite;
+}
+@keyframes vinyl {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Countdown number pop */
+.tick {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Ornament line */
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-rose);
+}
+.ornament::before,
+.ornament::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(
+    to var(--dir, right),
+    transparent,
+    color-mix(in oklab, var(--color-rose) 70%, transparent)
+  );
+}
+.ornament::after {
+  --dir: left;
+}
+
+/* Envelope */
+.envelope-flap {
+  clip-path: polygon(0 0, 50% 58%, 100% 0);
+  transform-origin: top center;
+  transition: transform 600ms var(--ease-out);
+}
+.envelope-open .envelope-flap {
+  transform: rotateX(180deg);
+}
+
+/* Gallery hover */
+.gallery-tile img {
+  transition: transform 700ms var(--ease-out);
+}
+.gallery-tile:hover img {
+  transform: scale(1.05);
+}
+
+.hero-veil {
+  background:
+    linear-gradient(
+      to top,
+      var(--color-wine) 0%,
+      color-mix(in oklab, var(--color-wine) 18%, transparent) 36%,
+      transparent 64%
+    ),
+    radial-gradient(ellipse at center, transparent 52%, color-mix(in oklab, var(--color-wine) 45%, transparent) 100%);
+}
+
+.cover-vignette {
+  background: radial-gradient(
+    ellipse at center,
+    transparent 42%,
+    color-mix(in oklab, var(--color-wine) 55%, transparent) 100%
+  );
+}
+
+.btn-lift {
+  box-shadow: 0 12px 28px -10px color-mix(in oklab, var(--color-wine) 65%, transparent);
+}
+
+.lightbox-enter {
+  animation: fade-in 250ms var(--ease-out);
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ken-burns,
+  .petal,
+  .vinyl-spin,
+  .invite-cover,
+  .reveal {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+  }
+  .invite-cover.is-away {
+    display: none;
+  }
+}

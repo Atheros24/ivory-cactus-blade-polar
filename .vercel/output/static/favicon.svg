@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Rizal and Farah">
+  <rect width="32" height="32" rx="8" fill="#2A0A10"/>
+  <rect x="1" y="1" width="30" height="30" rx="7" fill="#6B1525"/>
+  <rect x="2.6" y="2.6" width="26.8" height="26.8" rx="5.6" fill="none" stroke="#F7EFE6" stroke-width="1.4"/>
+  <g fill="#F7EFE6">
+    <path d="M5.4 7.4h7.35c2.78 0 4.55 1.52 4.55 3.88 0 1.58-.8 2.78-2.22 3.38L18.4 24.6h-3.2L12.2 15.5H7.9v9.1H5.4V7.4zm2.5 2.2v5.05h4.55c1.38 0 2.2-.74 2.2-1.95 0-1.22-.82-2-2.25-2H7.9z"/>
+    <path d="M19.55 7.4H27.6v2.25h-5.3v4.45h4.85v2.15H22.3v8.35h-2.75V7.4z"/>
+  </g>
+</svg>
